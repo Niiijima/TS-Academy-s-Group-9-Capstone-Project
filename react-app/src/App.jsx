@@ -1,10 +1,13 @@
+import oldHtml from './oldHtml';
+import './App.css';
+
 function App() {
   return (
     <div>
-      <h1>Hello, React!</h1>
-      <p>Your React app is running perfectly!</p>
+      {oldHtml()}
     </div>
   );
 }
 
 export default App;
+   
