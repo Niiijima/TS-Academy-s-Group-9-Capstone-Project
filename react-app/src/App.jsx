@@ -1,13 +1,12 @@
-import oldHtml from './oldHtml';
+import OldHtml from './oldHtml';
 import './App.css';
 
 function App() {
   return (
     <div>
-      {oldHtml()}
+      <OldHtml />
     </div>
   );
 }
 
 export default App;
-   
