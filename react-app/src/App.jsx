@@ -6,7 +6,7 @@ import "./App.css";
 import VideoSection from "./components/VideoSection";
 import PlanetGrid from "./components/PlanetGrid"; 
 import PlanetTable from "./components/PlanetTable";
-
+import ContactForm from "./components/ContactForm";
 
 
 
@@ -18,6 +18,7 @@ function App() {
       <VideoSection />
       <PlanetGrid />
       <PlanetTable />
+      <ContactForm />
 
     </>
   );
