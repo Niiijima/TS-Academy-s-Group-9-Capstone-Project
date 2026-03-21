@@ -3,7 +3,7 @@ function VideoSection() {
     <div className="video-section"> 
         <h2>How Planetary Data Helps Us Understand Space</h2>
       <p className="subtitle">
-        Comparing mass, diameter, gravity, and density helps us understand how planets form and behave.
+        Comparing <span>mass, diameter, gravity, </span> and <span> density </span> helps us understand how planets form and behave.
       </p>
 
       <div className="video-card">
