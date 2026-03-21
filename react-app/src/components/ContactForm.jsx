@@ -85,7 +85,7 @@ export default function ContactForm() {
                 checked={formData.friend}
                 onChange={handleChange}
               />{" "}
-              Friend
+              Guest
             </label>
             <label>
               <input
