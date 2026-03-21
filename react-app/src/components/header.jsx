@@ -8,7 +8,7 @@ export default function Header() {
         <nav className="nav">
           <a href="#">Home</a>
           <a href="#">Planets</a>
-          <a href="#">Contact</a>
+          <a href="#">Contact Us</a>
         </nav>
       </div>
     </header>
