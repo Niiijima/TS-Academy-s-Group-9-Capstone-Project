@@ -63,4 +63,4 @@ export default function PlanetTable() {
       </div>
     </section>
   );
-}8
+}
