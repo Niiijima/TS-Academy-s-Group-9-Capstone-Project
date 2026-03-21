@@ -94,7 +94,7 @@ export default function ContactForm() {
                 checked={formData.tsAcademy}
                 onChange={handleChange}
               />{" "}
-              TS Academy
+              TSAcademy
             </label>
           </div>
 
