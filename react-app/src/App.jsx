@@ -1,12 +1,14 @@
 // src/App.js
 import React from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <div>
-      <h1>Hello from React</h1>
-      <p>This is my HTML inside JSX.</p>
-    </div>
+    <>
+      <Header />
+      <Hero />
+    </>
   );
 }
 
