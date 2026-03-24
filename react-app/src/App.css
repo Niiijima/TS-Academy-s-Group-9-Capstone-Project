@@ -102,8 +102,20 @@ span{
 
 /* VIDEO */
 .video-card {
-  max-width: 800px;
-  margin: auto;
+    width: 1002px;
+    height: 745px;
+    margin-left: 250px;
+    border-radius: 10px
+}
+
+h2{
+    padding-top: 60px;
+    color: #164BAF;
+    font-family: "inter";
+    text-align: center;
+    width: 100%;
+    position: relative;
+    left: -20px;
 }
 
 /* GRID */
