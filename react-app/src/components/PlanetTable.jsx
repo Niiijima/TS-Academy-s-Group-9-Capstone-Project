@@ -26,7 +26,6 @@ export default function PlanetTable() {
   return (
     <section className="section light-bg">
       <div className="container">
-        {/* Centered write-up */}
         <div className="table-writeup center-text">
           <h2>Planetary Facts at a Glance</h2>
           <p>
@@ -35,7 +34,6 @@ export default function PlanetTable() {
           </p>
         </div>
 
-        {/* Responsive table wrapper */}
         <div className="table-wrapper">
           <table>
             <thead>
@@ -70,7 +68,6 @@ export default function PlanetTable() {
         </div>
       </div>
 
-      {/* Embedded CSS */}
       <style>{`
         .light-bg {
           background: #fff;
@@ -97,21 +94,24 @@ export default function PlanetTable() {
           margin: 0 auto;
         }
 
+        /* Scrollable table container */
         .table-wrapper {
-          overflow-x: auto; /* allows horizontal scroll on small screens */
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
         }
 
         table {
           width: 100%;
           border-collapse: collapse;
-          min-width: 0; /* remove fixed min-width */
+          min-width: 700px; /* forces scroll on small screens */
         }
 
         th, td {
           padding: 0.75rem 1rem;
           border: 1px solid #0f3f7f;
           text-align: center;
-          white-space: nowrap; /* prevents breaking text */
+          white-space: nowrap;
         }
 
         th {
@@ -120,7 +120,7 @@ export default function PlanetTable() {
         }
 
         .category-cell {
-          background-color: #cce0ff; /* light blue for category cells only */
+          background-color: #cce0ff;
           font-weight: bold;
         }
 
@@ -128,16 +128,43 @@ export default function PlanetTable() {
           background-color: #f9f9f9;
         }
 
-        @media (max-width: 768px) {
-          .table-writeup h2 {
-            font-size: 1.5rem;
-          }
-          .table-writeup p {
-            font-size: 0.9rem;
+        /* Stack table rows for mobile */
+        @media (max-width: 600px) {
+          table, thead, tbody, th, td, tr {
+            display: block;
           }
 
-          table, th, td {
-            font-size: 0.85rem;
+          thead {
+            display: none; /* hide header on small screens */
+          }
+
+          tr {
+            margin-bottom: 1rem;
+            border: 1px solid #0f3f7f;
+            border-radius: 8px;
+            overflow: hidden;
+          }
+
+          td {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            text-align: left;
+            border: none;
+            border-bottom: 1px solid #0f3f7f;
+          }
+
+          td:last-child {
+            border-bottom: 0;
+          }
+
+          .category-cell {
+            background-color: #cce0ff;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
           }
         }
       `}</style>
