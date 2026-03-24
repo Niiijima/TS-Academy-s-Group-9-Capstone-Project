@@ -26,13 +26,16 @@ export default function PlanetTable() {
   return (
     <section className="section light-bg">
       <div className="container">
-        <div className="table-writeup center-text">
-          <h2>Planetary Facts at a Glance</h2>
-          <p>
-            Below is a comparative table of major planets in our solar system.
-            The data highlights key physical properties used by astronomers and researchers worldwide.
-          </p>
-        </div>
+        <h2>Planetary Facts at a Glance</h2>
+
+        <p className="description">
+          Below is a comparative table of major planets in our solar system. The data highlights key physical
+          properties used by astronomers and researchers worldwide.
+        </p>
+
+        <p className="subtitle">
+          Data about the planets of our solar system (Planetary facts taken from NASA)
+        </p>
 
         <div className="table-wrapper">
           <table>
@@ -68,103 +71,76 @@ export default function PlanetTable() {
         </div>
       </div>
 
+      {/* ✅ Embedded CSS */}
       <style>{`
-        .light-bg {
-          background: #fff;
-          padding: 3rem 1rem;
+        .container {
+          padding: 20px;
+        }
+
+        h2 {
           color: #0f3f7f;
+          margin-bottom: 10px;
         }
 
-        .center-text {
-          text-align: center;
-          margin-bottom: 2rem;
-        }
-
-        .table-writeup h2 {
-          font-size: 1.8rem;
-          margin-bottom: 0.5rem;
-          color: #0f3f7f;
-        }
-
-        .table-writeup p {
+        .description {
           font-size: 1rem;
-          color: #555;
-          line-height: 1.5;
+          margin: 10px 0;
+          color: #333;
           max-width: 700px;
-          margin: 0 auto;
         }
 
-        /* Scrollable table container */
+        .subtitle {
+          font-size: 0.9rem;
+          color: #555;
+          margin-bottom: 20px;
+          font-style: italic;
+        }
+
+        /* Table wrapper for horizontal scroll */
         .table-wrapper {
           width: 100%;
           overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
         }
 
         table {
           width: 100%;
           border-collapse: collapse;
-          min-width: 700px; /* forces scroll on small screens */
+          min-width: 600px; /* ensures scroll instead of breaking */
+          background: #fff;
         }
 
         th, td {
-          padding: 0.75rem 1rem;
-          border: 1px solid #0f3f7f;
-          text-align: center;
-          white-space: nowrap;
+          padding: 12px;
+          text-align: left;
+          border: 1px solid #ddd;
         }
 
         th {
-          background-color: #0f3f7f;
+          background: #0f3f7f;
           color: #fff;
         }
 
-        .category-cell {
-          background-color: #cce0ff;
-          font-weight: bold;
+        tr:nth-child(even) {
+          background: #f9f9f9;
         }
 
-        tr:nth-child(even):not(.category-cell) {
-          background-color: #f9f9f9;
+        tr:hover {
+          background: #f1f1f1;
         }
 
-        /* Stack table rows for mobile */
-        @media (max-width: 600px) {
-          table, thead, tbody, th, td, tr {
-            display: block;
+        /* 📱 Mobile responsiveness */
+        @media (max-width: 768px) {
+          th, td {
+            padding: 8px;
+            font-size: 0.8rem;
           }
 
-          thead {
-            display: none; /* hide header on small screens */
+          h2 {
+            font-size: 1.3rem;
           }
 
-          tr {
-            margin-bottom: 1rem;
-            border: 1px solid #0f3f7f;
-            border-radius: 8px;
-            overflow: hidden;
-          }
-
-          td {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 1rem;
-            text-align: left;
-            border: none;
-            border-bottom: 1px solid #0f3f7f;
-          }
-
-          td:last-child {
-            border-bottom: 0;
-          }
-
-          .category-cell {
-            background-color: #cce0ff;
-            font-weight: bold;
-            display: block;
-            text-align: center;
-            margin-bottom: 0.5rem;
-            padding: 0.5rem;
+          .description {
+            font-size: 0.9rem;
           }
         }
       `}</style>
