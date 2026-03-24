@@ -13,38 +13,37 @@ function App() {
   const planetRef = useRef(null);
   const contactRef = useRef(null);
 
-  // Scroll to PlanetGrid
-  const scrollToPlanets = () => {
-    if (planetRef.current) {
-      const yOffset = -80; // Adjust if your header is sticky
-      const y = planetRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  // Scroll function with offset for sticky header
+  const scrollToRef = (ref) => {
+    if (ref.current) {
+      const yOffset = -80; // Adjust this if your header is taller
+      const y = ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
-  // Scroll to ContactForm
-  const scrollToContact = () => {
-    if (contactRef.current) {
-      const yOffset = -80;
-      const y = contactRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
+  const scrollToPlanets = () => scrollToRef(planetRef);
+  const scrollToContact = () => scrollToRef(contactRef);
 
   return (
     <>
+      {/* Header with scroll handlers */}
       <Header onExploreClick={scrollToPlanets} onContactClick={scrollToContact} />
-      <Hero />
+
+      {/* Hero with scroll handlers */}
+      <Hero onExploreClick={scrollToPlanets} onContactClick={scrollToContact} />
+
       <VideoSection />
 
-      {/* PlanetGrid with ref */}
+      {/* Planet images section */}
       <div ref={planetRef}>
         <PlanetGrid />
       </div>
 
+      {/* Planet table section */}
       <PlanetTable />
 
-      {/* ContactForm with ref */}
+      {/* Contact form section */}
       <div ref={contactRef}>
         <ContactForm />
       </div>
