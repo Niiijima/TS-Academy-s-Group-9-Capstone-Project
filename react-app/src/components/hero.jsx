@@ -1,3 +1,4 @@
+//hero.jsx
 import React from "react";
 
 export default function Hero({ onExploreClick, onContactClick }) {

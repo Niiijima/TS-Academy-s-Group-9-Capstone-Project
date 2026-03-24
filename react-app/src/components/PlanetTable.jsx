@@ -5,7 +5,7 @@ const planetData = [
   {
     category: "Terrestrial",
     planets: [
-      { name: "Mercury", mass: 0.330, diameter: 4878, density: 5427, distancefromsun: 57.9 },
+      { name: "Mercury", mass: 0.33, diameter: 4878, density: 5427, distancefromsun: 57.9 },
       { name: "Venus", mass: 4.87, diameter: 12104, density: 5243, distancefromsun: 108.2 },
       { name: "Earth", mass: 5.97, diameter: 12756, density: 5514, distancefromsun: 149.6 },
       { name: "Mars", mass: 0.642, diameter: 6792, density: 3933, distancefromsun: 227.9 },
