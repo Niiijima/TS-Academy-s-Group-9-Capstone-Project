@@ -1,7 +1,6 @@
-//header.jsx
-import React from 'react';
+import React from "react";
 
-export default function Header() {
+function Header({ onExploreClick, onContactClick }) {
   return (
     <header className="header">
       <div className="container header-content">
@@ -15,3 +14,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default Header;
