@@ -187,4 +187,11 @@ th {
   .image-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .video-card {
+    width: 700px;
+    height: 400px;
+    margin-left: 15px;
+  }
 }
+
