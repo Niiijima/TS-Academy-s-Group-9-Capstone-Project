@@ -25,7 +25,7 @@ function Header({ onExploreClick, onContactClick }) {
           position: sticky;
           top: 0;
           width: 100%;
-          background: #0f3f7f; /* solid blue */
+          background: #0f3f7f;
           z-index: 1000;
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -34,7 +34,7 @@ function Header({ onExploreClick, onContactClick }) {
           max-width: 1200px;
           margin: 0 auto;
           display: flex;
-          justify-content: space-between; /* keeps logo left and buttons right */
+          justify-content: space-between;
           align-items: center;
           padding: 1rem 2rem;
           color: #fff;
@@ -43,7 +43,6 @@ function Header({ onExploreClick, onContactClick }) {
         .logo {
           font-weight: bold;
           font-size: 1.2rem;
-          color: #fff;
         }
 
         .nav-links {
@@ -58,6 +57,7 @@ function Header({ onExploreClick, onContactClick }) {
           display: flex;
         }
 
+        /* Buttons */
         .btn-gradient {
           padding: 0.8rem 1.8rem;
           font-size: 1.1rem;
@@ -90,6 +90,30 @@ function Header({ onExploreClick, onContactClick }) {
         .btn-glass:hover {
           background: rgba(255,255,255,0.25);
           transform: translateY(-3px);
+        }
+
+        /* Responsive for mobile */
+        @media (max-width: 768px) {
+          .nav {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .nav-links {
+            flex-direction: column;
+            width: 100%;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+          }
+
+          .nav-links li {
+            width: 100%;
+          }
+
+          .btn-gradient, .btn-glass {
+            width: 100%;
+            text-align: center;
+          }
         }
       `}</style>
     </header>
