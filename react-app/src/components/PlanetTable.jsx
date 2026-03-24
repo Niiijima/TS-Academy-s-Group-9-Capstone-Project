@@ -1,4 +1,3 @@
-// src/components/PlanetTable.jsx
 import React from "react";
 
 const planetData = [
@@ -25,11 +24,18 @@ const planetData = [
 
 export default function PlanetTable() {
   return (
-    <section className="section">
+    <section className="section light-bg">
       <div className="container">
-        <h2>Planetary Facts at a Glance</h2>
-        <p className="subtitle">Planetary facts taken from NASA</p>
+        {/* Centered write-up */}
+        <div className="table-writeup center-text">
+          <h2>Planetary Facts at a Glance</h2>
+          <p>
+            Below is a comparative table of major planets in our solar system.
+            The data highlights key physical properties used by astronomers and researchers worldwide.
+          </p>
+        </div>
 
+        {/* Responsive table wrapper */}
         <div className="table-wrapper">
           <table>
             <thead>
@@ -47,7 +53,9 @@ export default function PlanetTable() {
                 group.planets.map((planet, index) => (
                   <tr key={`${groupIndex}-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={group.planets.length}>{group.category}</td>
+                      <td rowSpan={group.planets.length} className="category-cell">
+                        {group.category}
+                      </td>
                     )}
                     <td>{planet.name}</td>
                     <td>{planet.mass}</td>
@@ -61,6 +69,78 @@ export default function PlanetTable() {
           </table>
         </div>
       </div>
+
+      {/* Embedded CSS */}
+      <style>{`
+        .light-bg {
+          background: #fff;
+          padding: 3rem 1rem;
+          color: #0f3f7f;
+        }
+
+        .center-text {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        .table-writeup h2 {
+          font-size: 1.8rem;
+          margin-bottom: 0.5rem;
+          color: #0f3f7f;
+        }
+
+        .table-writeup p {
+          font-size: 1rem;
+          color: #555;
+          line-height: 1.5;
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .table-wrapper {
+          overflow-x: auto; /* allows horizontal scroll on small screens */
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          min-width: 0; /* remove fixed min-width */
+        }
+
+        th, td {
+          padding: 0.75rem 1rem;
+          border: 1px solid #0f3f7f;
+          text-align: center;
+          white-space: nowrap; /* prevents breaking text */
+        }
+
+        th {
+          background-color: #0f3f7f;
+          color: #fff;
+        }
+
+        .category-cell {
+          background-color: #cce0ff; /* light blue for category cells only */
+          font-weight: bold;
+        }
+
+        tr:nth-child(even):not(.category-cell) {
+          background-color: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+          .table-writeup h2 {
+            font-size: 1.5rem;
+          }
+          .table-writeup p {
+            font-size: 0.9rem;
+          }
+
+          table, th, td {
+            font-size: 0.85rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }
