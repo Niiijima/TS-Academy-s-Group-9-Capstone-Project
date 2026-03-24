@@ -24,8 +24,8 @@ export default function VideoSection() {
       <style>{`
         .video-section {
           padding: 3rem 1rem;
-          background: #1b5fa7;
-          color: #fff; /* default text color */
+          background: #0f3f7f;
+          color: #fff; 
           text-align: center;
         }
 
@@ -40,7 +40,7 @@ export default function VideoSection() {
           max-width: 700px;
           margin-left: auto;
           margin-right: auto;
-          color: #ffffff; /* subtitle explicitly white */
+          color: #ffffff; /* explicitly white */
         }
 
         .video-card {
