@@ -1,4 +1,3 @@
-// src/components/PlanetTable.jsx
 import React from "react";
 
 const planetData = [
@@ -25,7 +24,7 @@ const planetData = [
 
 export default function PlanetTable() {
   return (
-    <section className="section">
+    <section className="section light-bg">
       <div className="container">
         <h2>Planetary Facts at a Glance</h2>
 
@@ -55,7 +54,9 @@ export default function PlanetTable() {
                 group.planets.map((planet, index) => (
                   <tr key={`${groupIndex}-${index}`}>
                     {index === 0 && (
-                      <td rowSpan={group.planets.length}>{group.category}</td>
+                      <td rowSpan={group.planets.length} className="category-cell">
+                        {group.category}
+                      </td>
                     )}
                     <td>{planet.name}</td>
                     <td>{planet.mass}</td>
