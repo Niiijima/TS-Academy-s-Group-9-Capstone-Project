@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-export default function Header() {
+function Header({ onExploreClick, onContactClick }) {
   return (
     <header className="header">
       <div className="container header-content">
@@ -8,9 +8,11 @@ export default function Header() {
         <nav className="nav">
           <a href="#">Home</a>
           <a href="#">Planets</a>
-          <a href="#">Contact</a>
+          <a href="#">Contact Us</a>
         </nav>
       </div>
     </header>
   );
 }
+
+export default Header;

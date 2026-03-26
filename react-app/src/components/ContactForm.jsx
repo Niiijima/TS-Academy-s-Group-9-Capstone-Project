@@ -1,4 +1,4 @@
-// src/components/ContactForm.jsx
+/// src/components/ContactForm.jsx
 import React, { useState } from "react";
 
 export default function ContactForm() {
@@ -94,7 +94,7 @@ export default function ContactForm() {
                 checked={formData.tsAcademy}
                 onChange={handleChange}
               />{" "}
-              TS Academy
+              TSAcademy
             </label>
           </div>
 
