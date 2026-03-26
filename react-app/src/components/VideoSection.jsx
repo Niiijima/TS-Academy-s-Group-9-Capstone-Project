@@ -5,22 +5,31 @@ export default function VideoSection() {
     <section className="video-section">
       <div className="container">
         <h2>How Planetary Data Helps Us Understand Space</h2>
-      <p className="subtitle">
-        Comparing <span>mass, diameter, gravity, </span> and <span> density </span> helps us understand how planets form and behave.
-      </p>
 
-      <div className="video-card">
-        <video controls poster="https://images.unsplash.com/photo-1454789548928-9efd52dc4031"> <source src="planet.mp4" type="video/mp4" />
-        </video>
+        <p className="subtitle">
+          Comparing <span>mass, diameter, gravity, </span> and <span>density</span> helps us understand how planets form and behave.
+        </p>
 
-        <div className="video-card">
-          <video
-            controls
-            poster="https://images.unsplash.com/photo-1454789548928-9efd52dc4031"
-          >
-            <source src="planet.mp4" type="video/mp4" />
+        <div>
+          {/* First Video */}
+          <video className="video-card" autoPlay muted loop controls>
+            <source 
+              src="https://www.pexels.com/download/video/36029081/" 
+              type="video/mp4" 
+            />
             Your browser does not support the video tag.
           </video>
+
+          {/* Second Video */}
+          <div className="video-card">
+            <video
+              controls
+              poster="https://images.unsplash.com/photo-1454789548928-9efd52dc4031"
+            >
+              <source src="planet.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
 
@@ -44,12 +53,12 @@ export default function VideoSection() {
           max-width: 700px;
           margin-left: auto;
           margin-right: auto;
-          color: #ffffff; /* explicitly white */
+          color: #ffffff;
         }
 
         .video-card {
           max-width: 900px;
-          margin: 0 auto;
+          margin: 1rem auto;
           border-radius: 15px;
           overflow: hidden;
           box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -61,7 +70,6 @@ export default function VideoSection() {
           display: block;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
           .video-section h2 {
             font-size: 1.5rem;
