@@ -38,6 +38,18 @@ export default function ContactForm() {
     });
   };
 
+  const cities = [
+    "Lagos",
+    "Abuja",
+    "Kano",
+    "Ibadan",
+    "Port Harcourt",
+    "London",
+    "New York",
+    "Tokyo",
+    "Paris"
+  ];
+
   return (
     <section className="section light-bg">
       <div className="container">
@@ -62,13 +74,19 @@ export default function ContactForm() {
             required
           />
 
-          <input
-            type="text"
+          {/* CITY DROPDOWN */}
+          <select
             name="city"
-            placeholder="City"
             value={formData.city}
             onChange={handleChange}
-          />
+          >
+            <option value="">Select City</option>
+            {cities.map((city, index) => (
+              <option key={index} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
 
           <input
             type="tel"
@@ -94,8 +112,8 @@ export default function ContactForm() {
                 type="radio"
                 name="contactMethod"
                 value="phone"
-                onChange={handleChange}
                 checked={formData.contactMethod === "phone"}
+                onChange={handleChange}
               />
               Phone
             </label>
@@ -105,8 +123,8 @@ export default function ContactForm() {
                 type="radio"
                 name="contactMethod"
                 value="email"
-                onChange={handleChange}
                 checked={formData.contactMethod === "email"}
+                onChange={handleChange}
               />
               Email
             </label>
@@ -116,8 +134,8 @@ export default function ContactForm() {
                 type="radio"
                 name="contactMethod"
                 value="both"
-                onChange={handleChange}
                 checked={formData.contactMethod === "both"}
+                onChange={handleChange}
               />
               Both
             </label>
@@ -146,11 +164,12 @@ export default function ContactForm() {
               />
               TS Academy
             </label>
-             <label>
+
+            <label>
               <input
                 type="checkbox"
-                name="tsAcademy"
-                checked={formData.tsAcademy}
+                name="others"
+                checked={formData.others}
                 onChange={handleChange}
               />
               Others
@@ -163,6 +182,7 @@ export default function ContactForm() {
         </form>
       </div>
 
+      {/* ================= CSS ================= */}
       <style>{`
         .form-grid {
           display: grid;
@@ -179,7 +199,6 @@ export default function ContactForm() {
 
         input[name="fullName"] { grid-area: fullName; }
         input[name="email"] { grid-area: email; }
-        input[name="city"] { grid-area: city; }
         input[name="phone"] { grid-area: phone; }
 
         textarea {
@@ -210,6 +229,19 @@ export default function ContactForm() {
 
         .btn.primary:hover {
           opacity: 0.9;
+        }
+
+        /* ✅ CITY DROPDOWN FIXED */
+        select {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #d6d6d6;
+          border-radius: 8px;
+          font-size: 14px;
+          outline: none;
+          background: white;
+          color: #333;
+          cursor: pointer;
         }
 
         input, textarea {
