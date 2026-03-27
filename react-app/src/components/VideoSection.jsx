@@ -7,15 +7,15 @@ export default function VideoSection() {
         <h2>How Planetary Data Helps Us Understand Space</h2>
 
         <p className="subtitle">
-          Comparing <span>mass, diameter, gravity, </span> and <span>density</span> helps us understand how planets form and behave.
+          Comparing <span>mass, diameter, gravity,</span> and <span>density</span> helps us understand how planets form and behave.
         </p>
 
         <div>
           {/* First Video */}
           <video className="video-card" autoPlay muted loop controls>
-            <source 
-              src="https://www.pexels.com/download/video/36029081/" 
-              type="video/mp4" 
+            <source
+              src="https://www.pexels.com/download/video/36029081/"
+              type="video/mp4"
             />
             Your browser does not support the video tag.
           </video>
@@ -33,12 +33,12 @@ export default function VideoSection() {
         </div>
       </div>
 
-      {/* Embedded CSS */}
+      {/* CSS */}
       <style>{`
         .video-section {
           padding: 3rem 1rem;
           background: #0f3f7f;
-          color: #fff; 
+          color: #fff;
           text-align: center;
         }
 
@@ -58,10 +58,11 @@ export default function VideoSection() {
 
         .video-card {
           max-width: 900px;
+          width: 100%;
           margin: 1rem auto;
           border-radius: 15px;
           overflow: hidden;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .video-card video {
@@ -70,26 +71,37 @@ export default function VideoSection() {
           display: block;
         }
 
+        /* Tablet */
         @media (max-width: 768px) {
           .video-section h2 {
             font-size: 1.5rem;
           }
-          
-          @media (max-width: 768px) {
-          .video-card {
-            width: 650px;
-          
 
           .video-section .subtitle {
             font-size: 1rem;
             padding: 0 1rem;
           }
+
+          .video-card {
+            width: 95%;
+          }
         }
-      `}
-      
-      
-      
-      </style>
+
+        /* Mobile */
+        @media (max-width: 480px) {
+          .video-section h2 {
+            font-size: 1.3rem;
+          }
+
+          .video-section .subtitle {
+            font-size: 0.95rem;
+          }
+
+          .video-card {
+            width: 100%;
+          }
+        }
+      `}</style>
     </section>
   );
 }
