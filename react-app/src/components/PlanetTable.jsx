@@ -115,36 +115,38 @@ export default function PlanetTable() {
         </table>
       </div>
 
-      {/* CSS */}
       <style>{`
         .planet-table-section {
           background: #ffffff;
           width: 100%;
           padding: 20px;
+          text-align: center;
         }
 
         h2 {
           color: #164BAF;
           font-family: Inter, sans-serif;
-          margin-left: 150px;
+          margin: 0 0 10px 0;
         }
 
         .description,
         .subtitle {
           color: #0F2A44;
           font-family: Inter, sans-serif;
-          margin-left: 150px;
+          margin: 5px auto 20px auto;
+          text-align: center;
+          display: block;
         }
 
         .table-wrapper {
           overflow-x: auto;
+          margin: 0 auto;
         }
 
         table {
-          margin-left: 150px;
-          margin-top: 20px;
           border-collapse: collapse;
-          width: 80%;
+          width: 90%;
+          margin: 0 auto;
           color: #212121;
         }
 
@@ -156,8 +158,7 @@ export default function PlanetTable() {
         }
 
         td {
-          padding-left: 20px;
-          padding-right: 50px;
+          padding: 10px;
           text-align: center;
           background-color: #F2F7FF;
           border: 1px solid white;
@@ -168,96 +169,24 @@ export default function PlanetTable() {
           font-weight: 500;
         }
 
-        @media (max-width: 768px) {
-          h2,
-          .description,
-          .subtitle,
-          table {
-            margin-left: 10px;
-          }
+        table tr { transition: all 0.2s ease-in-out; }
+        table tbody tr:hover { background-color: #e6f0ff; transform: scale(1.01); }
+        table td { transition: all 0.2s ease; }
+        table td:hover { background-color: #d9e8ff; }
 
-          table {
-            width: 95%;
-          }
+        @media (max-width: 1024px) {
+          h2 { font-size: 1.6rem; }
+          .description, .subtitle { font-size: 0.95rem; }
+          table { width: 95%; }
+          th, td { padding: 8px; font-size: 0.9rem; }
         }
 
-        /* Smooth transition for hover */
-table tr {
-  transition: all 0.2s ease-in-out;
-}
-
-  /* Row hover effect */
-  table tbody tr:hover {
-    background-color: #e6f0ff;
-    transform: scale(1.01);
-  }
-
-  /* Optional: subtle lift effect for cells */
-  table td {
-    transition: all 0.2s ease;
-  }
-
-  /* Highlight individual cell slightly on hover */
-  table td:hover {
-    background-color: #d9e8ff;
-  }
-
-
-  @media (max-width: 1024px) {
-    h2 {
-      margin-left: 20px;
-      font-size: 1.6rem;
-    }
-
-    .description,
-    .subtitle {
-      margin-left: 20px;
-      font-size: 0.95rem;
-    }
-
-    table {
-      margin-left: 20px;
-      width: 95%;
-    }
-
-    th, td {
-      padding: 10px;
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    h2 {
-      margin-left: 10px;
-      font-size: 1.3rem;
-    }
-
-    .description,
-    .subtitle {
-      margin-left: 10px;
-      font-size: 0.85rem;
-    }
-
-    .table-wrapper {
-      overflow-x: auto;
-    }
-
-    table {
-      margin-left: 10px;
-      width: 100%;
-      min-width: 700px; /* keeps scroll instead of breaking */
-    }
-
-    th, td {
-      padding: 8px;
-      font-size: 0.8rem;
-    }
-
-    /* Reduce hover effect on mobile (optional) */
-    table tbody tr:hover {
-      transform: none;
-    }
-  }
+        @media (max-width: 768px) {
+          h2 { font-size: 1.3rem; }
+          .description, .subtitle { font-size: 0.85rem; }
+          table { width: 100%; min-width: 700px; }
+          table tbody tr:hover { transform: none; }
+        }
       `}</style>
     </section>
   );
