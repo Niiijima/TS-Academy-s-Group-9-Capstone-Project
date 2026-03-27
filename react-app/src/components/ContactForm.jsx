@@ -7,9 +7,10 @@ export default function ContactForm() {
     city: "",
     phone: "",
     message: "",
-    contactMethod: "",
+    contactMethod: "", // ✅ unified
     friend: false,
-    tsAcademy: false
+    tsAcademy: false,
+    others: false
   });
 
   const handleChange = (e) => {
@@ -32,9 +33,10 @@ export default function ContactForm() {
       city: "",
       phone: "",
       message: "",
-      contactMethod: "",
+      contactMethod: "", // ✅ consistent reset
       friend: false,
-      tsAcademy: false
+      tsAcademy: false,
+      others: false
     });
   };
 
@@ -53,137 +55,154 @@ export default function ContactForm() {
   return (
     <section className="section light-bg">
       <div className="container">
-        <h2>Have Questions About Planetary Science?</h2>
+        <div className="form-text">
+          <h2>Have Questions About Planetary Science?</h2>
+          <p className="collected-analyzed">
+            Interested in learning more about space, astronomy,
+            or how planetary data is collected and analyzed? <br />
+            Reach out and we'll get back to you.
+          </p>
 
-        <form className="form-grid" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="fullName"
-            placeholder="Full name"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-          />
+          <form className="form-grid" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full name"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+            />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
 
-          {/* CITY DROPDOWN */}
-          <select
-            name="city"
-            value={formData.city}
-            onChange={handleChange}
-          >
-            <option value="">Select City</option>
-            {cities.map((city, index) => (
-              <option key={index} value={city}>
-                {city}
-              </option>
-            ))}
-          </select>
+            {/* Dynamic City Dropdown */}
+            <select
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+            >
+              <option value="">Select City</option>
+              {cities.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
 
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone number"
-            value={formData.phone}
-            onChange={handleChange}
-          />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone number"
+              value={formData.phone}
+              onChange={handleChange}
+            />
 
-          <textarea
-            name="message"
-            placeholder="Message"
-            value={formData.message}
-            onChange={handleChange}
-          />
+            <textarea
+              name="message"
+              placeholder="Enter your message"
+              value={formData.message}
+              onChange={handleChange}
+            />
 
-          {/* Contact method */}
-          <div className="contact-method">
-            <p>How should we contact you?</p>
+            {/* Contact Method */}
+            <div className="contact-method">
+              <p>How should we contact you?</p>
 
-            <label>
-              <input
-                type="radio"
-                name="contactMethod"
-                value="phone"
-                checked={formData.contactMethod === "phone"}
-                onChange={handleChange}
-              />
-              Phone
-            </label>
+              <label>
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="phone"
+                  checked={formData.contactMethod === "phone"}
+                  onChange={handleChange}
+                />
+                Phone
+              </label>
 
-            <label>
-              <input
-                type="radio"
-                name="contactMethod"
-                value="email"
-                checked={formData.contactMethod === "email"}
-                onChange={handleChange}
-              />
-              Email
-            </label>
+              <label>
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="email"
+                  checked={formData.contactMethod === "email"}
+                  onChange={handleChange}
+                />
+                Email
+              </label>
 
-            <label>
-              <input
-                type="radio"
-                name="contactMethod"
-                value="both"
-                checked={formData.contactMethod === "both"}
-                onChange={handleChange}
-              />
-              Both
-            </label>
-          </div>
+              <label>
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="both"
+                  checked={formData.contactMethod === "both"}
+                  onChange={handleChange}
+                />
+                Both
+              </label>
+            </div>
 
-          {/* How did you hear */}
-          <div className="hear-about">
-            <p>How did you hear about us?</p>
+            {/* How did you hear */}
+            <div className="hear-about">
+              <p>How did you hear about us?</p>
 
-            <label>
-              <input
-                type="checkbox"
-                name="friend"
-                checked={formData.friend}
-                onChange={handleChange}
-              />
-              Friend
-            </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="friend"
+                  checked={formData.friend}
+                  onChange={handleChange}
+                />
+                Friend
+              </label>
 
-            <label>
-              <input
-                type="checkbox"
-                name="tsAcademy"
-                checked={formData.tsAcademy}
-                onChange={handleChange}
-              />
-              TS Academy
-            </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="tsAcademy"
+                  checked={formData.tsAcademy}
+                  onChange={handleChange}
+                />
+                TS Academy
+              </label>
 
-            <label>
-              <input
-                type="checkbox"
-                name="others"
-                checked={formData.others}
-                onChange={handleChange}
-              />
-              Others
-            </label>
-          </div>
+              <label>
+                <input
+                  type="checkbox"
+                  name="others"
+                  checked={formData.others}
+                  onChange={handleChange}
+                />
+                Others
+              </label>
+            </div>
 
-          <button type="submit" className="btn primary">
-            Submit
-          </button>
-        </form>
+            <button type="submit" className="btn primary">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
 
       {/* ================= CSS ================= */}
       <style>{`
+        .form-text {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .collected-analyzed {
+          color: #555;
+          margin-bottom: 20px;
+        }
+
         .form-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -231,17 +250,12 @@ export default function ContactForm() {
           opacity: 0.9;
         }
 
-        /* ✅ CITY DROPDOWN FIXED */
         select {
           width: 100%;
           padding: 12px;
           border: 1px solid #d6d6d6;
           border-radius: 8px;
           font-size: 14px;
-          outline: none;
-          background: white;
-          color: #333;
-          cursor: pointer;
         }
 
         input, textarea {
@@ -250,7 +264,6 @@ export default function ContactForm() {
           border: 1px solid #d6d6d6;
           border-radius: 8px;
           font-size: 14px;
-          outline: none;
         }
 
         .contact-method label,
@@ -271,6 +284,21 @@ export default function ContactForm() {
         .section.light-bg {
           padding: 40px 20px;
           background: #f7f9fc;
+        }
+
+        @media (max-width: 768px) {
+          .form-grid {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+              "fullName"
+              "email"
+              "city"
+              "phone"
+              "message"
+              "contact"
+              "hear"
+              "btn";
+          }
         }
       `}</style>
     </section>
