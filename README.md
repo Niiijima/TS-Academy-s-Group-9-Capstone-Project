@@ -6,10 +6,10 @@ This is a React-based web application that displays information about planets us
 
 ##  Team Members
 
-- Elizabeth Okonkwo - https://github.com/Eliza-bit492
+- Uloma Nneji - https://github.com/FaVe-N
 - Samuel Idah - https://github.com/Idahjnr007
 - Okafor Nicholas - https://github.com/el-klaus
-- Uloma Nneji - https://github.com/FaVe-N
+- Elizabeth Okonkwo - https://github.com/Eliza-bit492
 - Odumoso Bright - https://github.com/odumosobright-designGitHub 
 - Wisdom Onyejechukwu - https://github.com/Wz70
 - Reginald Paulite - https://github.com/reginaldpaulite
