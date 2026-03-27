@@ -74,13 +74,22 @@ export default function VideoSection() {
           .video-section h2 {
             font-size: 1.5rem;
           }
+          
+          @media (max-width: 768px) {
+          .video-card {
+            width: 650px;
+          
 
           .video-section .subtitle {
             font-size: 1rem;
             padding: 0 1rem;
           }
         }
-      `}</style>
+      `}
+      
+      
+      
+      </style>
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function PlanetGrid() {
   const [planets, setPlanets] = useState([]);
 
-  // Local images mapping
+  // We had import Local images beacuase the API did not provide images
   const images = {
       mercury: "https://solarsystem.nasa.gov/system/feature_items/images/18_mercury_new.png",
       venus: "https://solarsystem.nasa.gov/system/feature_items/images/27_venus_jg.png",
