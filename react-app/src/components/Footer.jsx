@@ -3,15 +3,18 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="footer" style={{ border: "2px solid red", marginTop: "2rem" }}>
+    <footer className="footer" style={{ border: "", marginTop: "2rem" }}>
       <div className="container footer-content">
         <p>© 2026 TS ACADEMY Group Capstone Project. All rights reserved</p>
         <div className="footer-links">
-                    <a href="https://github.com/Anurella" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Anurella" target="_blank" rel="noopener noreferrer">
             Amaka-Github
           </a>
           <a href="https://www.linkedin.com/in/ifeomaokocha" target="_blank" rel="noopener noreferrer">
             Ifeoma-LinkedIn
+          </a>
+          <a href="https://github.com/el-klaus" target="_blank" rel="noopener noreferrer">
+            James Nicholas - Github
           </a>
           <a href="https://tsacademyonline.com/" target="_blank" rel="noopener noreferrer">
             TS Academy

@@ -4,7 +4,7 @@ function PlanetGrid() {
   const [planets, setPlanets] = useState([]);
 
   useEffect(() => {
-    fetch("https://anurella.github.io/json/planets.json")
+    fetch("/planets.json")
       .then((res) => res.json())
       .then((data) => setPlanets(data))
       .catch((err) => console.log(err));
@@ -16,7 +16,6 @@ function PlanetGrid() {
         <div className="container">
           <h2 className="center">Visualizing the Differences Between Planets</h2>
 
-          {/* Write-up above images */}
           <div className="planet-writeup center-text">
             <p>
               Planetary Facts at a Glance<br />
@@ -25,31 +24,30 @@ function PlanetGrid() {
             </p>
           </div>
 
-          {/* Planet images */}
           <div className="image-grid">
-            {planets.map((planet, index) => (
-              <figure key={index} className="planet-card">
-                <img src={planet.image} alt={planet.name} />
-                <figcaption>
-                  <h3>{planet.name}</h3>
-                  <p>Distance from Sun: {planet.distance}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+              {planets.map((planet, index) => (
+                <figure key={index} className="planet-card">
+                  <img src={planet.image} alt={planet.planet} />
+                  <figcaption>
+                    <h3>{planet.planet}</h3>
+                    <p>
+                      Distance from Sun: {planet.distanceFromSun} million km
+                    </p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
 
-          {/* Subtitle below images */}
           <p className="subtitle-below center-text">
             Data about the planets of our solar system (Planetary facts taken from NASA)
           </p>
         </div>
       </section>
 
-      {/* Embedded CSS */}
       <style>{`
         .light-bg {
-          background: #fff;
-          color: #0f3f7f; /* dark blue text */
+          background: #dbe0f1;
+          color: #0f3f7f; 
           padding: 3rem 1rem;
         }
 
@@ -66,22 +64,42 @@ function PlanetGrid() {
         }
 
         .image-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1.5rem;
-          justify-items: center;
-          margin-bottom: 1.5rem;
-        }
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Desktop */
+            gap: 1.5rem;
+            justify-items: center;
+            margin-bottom: 1.5rem;
+          }
 
+          @media (max-width: 1024px) {
+            .image-grid {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+
+
+          @media (max-width: 768px) {
+            .image-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+          
         .planet-card {
-          background: #f9f9f9;
+          background: #fff;
+          border: 1px solid #ddd;
           border-radius: 15px;
-          padding: 1rem;
+          padding: 0.2rem;
           text-align: center;
           transition: transform 0.3s, box-shadow 0.3s;
-          width: 100%;
+          width: auto;
           max-width: 250px;
         }
+
+          @media (min-width: 1024px) {
+            .planet-card figcaption {
+              display: none;
+            }
+          }
 
         .planet-card:hover {
           transform: translateY(-5px);
