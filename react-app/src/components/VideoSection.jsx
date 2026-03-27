@@ -67,7 +67,7 @@ export default function VideoSection() {
           margin: 20px auto;
           border-radius: 15px;
           overflow: hidden;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .video-card video {
@@ -76,6 +76,7 @@ export default function VideoSection() {
           display: block;
         }
 
+        /* Tablet */
         @media (max-width: 768px) {
           .video-section h2 {
             font-size: 2rem;
@@ -84,6 +85,25 @@ export default function VideoSection() {
           .video-section .subtitle {
             font-size: 1rem;
             padding: 0 1rem;
+          }
+
+          .video-card {
+            width: 95%;
+          }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+          .video-section h2 {
+            font-size: 1.3rem;
+          }
+
+          .video-section .subtitle {
+            font-size: 0.95rem;
+          }
+
+          .video-card {
+            width: 100%;
           }
         }
       `}</style>

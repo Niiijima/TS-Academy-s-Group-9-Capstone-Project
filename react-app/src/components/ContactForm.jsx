@@ -1,4 +1,3 @@
-// src/components/ContactForm.jsx
 import React, { useState } from "react";
 
 export default function ContactForm() {
@@ -8,7 +7,7 @@ export default function ContactForm() {
     city: "",
     phone: "",
     message: "",
-    contact: "",
+    contactMethod: "", // ✅ unified
     friend: false,
     tsAcademy: false,
     others: false
@@ -16,6 +15,7 @@ export default function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value
@@ -33,12 +33,24 @@ export default function ContactForm() {
       city: "",
       phone: "",
       message: "",
-      contact: "",
+      contactMethod: "", // ✅ consistent reset
       friend: false,
       tsAcademy: false,
       others: false
     });
   };
+
+  const cities = [
+    "Lagos",
+    "Abuja",
+    "Kano",
+    "Ibadan",
+    "Port Harcourt",
+    "London",
+    "New York",
+    "Tokyo",
+    "Paris"
+  ];
 
   return (
     <section className="section light-bg">
@@ -70,17 +82,18 @@ export default function ContactForm() {
               required
             />
 
+            {/* Dynamic City Dropdown */}
             <select
               name="city"
               value={formData.city}
               onChange={handleChange}
             >
               <option value="">Select City</option>
-              <option value="Abuja">Abuja</option>
-              <option value="Lagos">Lagos</option>
-              <option value="Port Harcourt">Port Harcourt</option>
-              <option value="Kano">Kano</option>
-              <option value="Ibadan">Ibadan</option>
+              {cities.map((city, index) => (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              ))}
             </select>
 
             <input
@@ -90,85 +103,86 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
             />
-         <div className="desktop-only">
-             <textarea
-                className="message-area"
-                name="message"
-                placeholder="Enter your message"
-                value={formData.message}
-                onChange={handleChange}
-                >
 
-              </textarea>
-              </div>
+            <textarea
+              name="message"
+              placeholder="Enter your message"
+              value={formData.message}
+              onChange={handleChange}
+            />
 
-             <div className="contact-options">
-                <h3>How should we contact you?</h3>
-                <div className="checkbox-grid"> 
-                  <label>
-                    <input
-                      type="radio"
-                      name="contact"
-                      value="phone"
-                      onChange={handleChange}
-                    />
-                    Phone
-                  </label>
+            {/* Contact Method */}
+            <div className="contact-method">
+              <p>How should we contact you?</p>
 
-                  <label>
-                    <input
-                      type="radio"
-                      name="contact"
-                      value="email"
-                      onChange={handleChange}
-                    />
-                       Email
-                   </label>
+              <label>
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="phone"
+                  checked={formData.contactMethod === "phone"}
+                  onChange={handleChange}
+                />
+                Phone
+              </label>
 
-                    <label>
-                      <input
-                        type="radio"
-                        name="contact"
-                        value="both"
-                        onChange={handleChange}
-                      />
-                      Both
-                    </label>
-               </div>
+              <label>
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="email"
+                  checked={formData.contactMethod === "email"}
+                  onChange={handleChange}
+                />
+                Email
+              </label>
 
-                <h3>How did you hear about us?</h3>
-                <div className="checkbox-grid-first">
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="friend"
-                      checked={formData.friend}
-                      onChange={handleChange}
-                    />
-                    Friend
-                  </label>
+              <label>
+                <input
+                  type="radio"
+                  name="contactMethod"
+                  value="both"
+                  checked={formData.contactMethod === "both"}
+                  onChange={handleChange}
+                />
+                Both
+              </label>
+            </div>
 
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="tsAcademy"
-                      checked={formData.tsAcademy}
-                      onChange={handleChange}
-                    />
-                    TS Academy
-                  </label>
+            {/* How did you hear */}
+            <div className="hear-about">
+              <p>How did you hear about us?</p>
 
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="others"
-                      checked={formData.others}
-                      onChange={handleChange}
-                    />
-                    Others
-                  </label>
-                </div>
-             </div>
+              <label>
+                <input
+                  type="checkbox"
+                  name="friend"
+                  checked={formData.friend}
+                  onChange={handleChange}
+                />
+                Friend
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="tsAcademy"
+                  checked={formData.tsAcademy}
+                  onChange={handleChange}
+                />
+                TS Academy
+              </label>
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="others"
+                  checked={formData.others}
+                  onChange={handleChange}
+                />
+                Others
+              </label>
+            </div>
 
             <button type="submit" className="btn primary">
               Submit
@@ -176,6 +190,117 @@ export default function ContactForm() {
           </form>
         </div>
       </div>
+
+      {/* ================= CSS ================= */}
+      <style>{`
+        .form-text {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .collected-analyzed {
+          color: #555;
+          margin-bottom: 20px;
+        }
+
+        .form-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            "fullName email"
+            "city phone"
+            "message contact"
+            "message hear"
+            "btn btn";
+          gap: 20px;
+          align-items: start;
+        }
+
+        input[name="fullName"] { grid-area: fullName; }
+        input[name="email"] { grid-area: email; }
+        input[name="phone"] { grid-area: phone; }
+
+        textarea {
+          grid-area: message;
+          min-height: 180px;
+          resize: none;
+        }
+
+        .contact-method {
+          grid-area: contact;
+        }
+
+        .hear-about {
+          grid-area: hear;
+        }
+
+        .btn.primary {
+          grid-area: btn;
+          padding: 12px;
+          border: none;
+          border-radius: 8px;
+          color: white;
+          cursor: pointer;
+          font-size: 16px;
+          background: linear-gradient(45deg, #ff6ec4, #7873f5);
+          transition: 0.3s ease;
+        }
+
+        .btn.primary:hover {
+          opacity: 0.9;
+        }
+
+        select {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #d6d6d6;
+          border-radius: 8px;
+          font-size: 14px;
+        }
+
+        input, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #d6d6d6;
+          border-radius: 8px;
+          font-size: 14px;
+        }
+
+        .contact-method label,
+        .hear-about label {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-right: 20px;
+          margin-top: 10px;
+          font-size: 14px;
+        }
+
+        .container {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .section.light-bg {
+          padding: 40px 20px;
+          background: #f7f9fc;
+        }
+
+        @media (max-width: 768px) {
+          .form-grid {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+              "fullName"
+              "email"
+              "city"
+              "phone"
+              "message"
+              "contact"
+              "hear"
+              "btn";
+          }
+        }
+      `}</style>
     </section>
   );
 }
