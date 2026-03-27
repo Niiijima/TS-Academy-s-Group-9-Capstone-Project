@@ -1,4 +1,4 @@
-# TS-Academy-s-Group-Capstone-Project
+# TS-Academy-s-Group-9-Capstone-Project
 Group work for Ts Academy's Project
 ##  Project Summary
 
