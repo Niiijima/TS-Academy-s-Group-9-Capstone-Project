@@ -42,4 +42,4 @@ npm install
 npm start
 
 ##  Live Deployment
-View the live website here: (link will be added after deployment is complete)
+View the live website here: https://ts-academy-s-group-9-capstone-proje-jet.vercel.app/
