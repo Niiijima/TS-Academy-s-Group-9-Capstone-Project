@@ -29,6 +29,8 @@ export default function Hero({ onExploreClick, onContactClick }) {
 
       {/* Embedded CSS */}
       <style>{`
+
+         
           .hero {
             padding: 1rem;
             background: linear-gradient(to right, #01183c, #01183c);
@@ -59,6 +61,7 @@ export default function Hero({ onExploreClick, onContactClick }) {
             font-size: 0.8rem;
             margin-bottom: 2rem;
             line-height: 1.5;
+            color: #DDDDDD;
           }
 
           .hero-buttons {

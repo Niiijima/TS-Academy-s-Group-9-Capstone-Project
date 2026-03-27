@@ -1,153 +1,263 @@
 import React from "react";
 
-const planetData = [
-  {
-    category: "Terrestrial",
-    planets: [
-      { name: "Mercury", mass: 0.330, diameter: 4878, density: 5427, distancefromsun: 57.9 },
-      { name: "Venus", mass: 4.87, diameter: 12104, density: 5243, distancefromsun: 108.2 },
-      { name: "Earth", mass: 5.97, diameter: 12756, density: 5514, distancefromsun: 149.6 },
-      { name: "Mars", mass: 0.642, diameter: 6792, density: 3933, distancefromsun: 227.9 },
-    ],
-  },
-  {
-    category: "Gas Giants",
-    planets: [
-      { name: "Jupiter", mass: 1898, diameter: 142984, density: 1326, distancefromsun: 778.6 },
-      { name: "Saturn", mass: 568, diameter: 120536, density: 687, distancefromsun: 1433.5 },
-      { name: "Uranus", mass: 86.8, diameter: 51118, density: 1271, distancefromsun: 2872.5 },
-      { name: "Neptune", mass: 102, diameter: 49528, density: 1638, distancefromsun: 4495.1 },
-      { name: "Pluto", mass: 0.0146, diameter: 2370, density: 1850, distancefromsun: 5906.4 },
-    ],
-  },
-];
-
 export default function PlanetTable() {
   return (
-    <section className="section light-bg planet-table-section">
-        <div className="container">
-        <h2>Planetary Facts at a Glance</h2>
+    <section className="planet-table-section">
+      <h2>Planetary Facts at a Glance</h2>
 
-        <p className="description">
-          Below is a comparative table of major planets in our solar system. The data highlights key physical
-          properties used by astronomers and researchers worldwide.
-        </p>
+      <p className="description">
+        Below is a comparative table of major planets in our solar system showing key physical properties used in astronomy.
+      </p>
 
-        <p className="subtitle">
-          Data about the planets of our solar system (Planetary facts taken from NASA)
-        </p>
+      <p className="subtitle">
+        Data about the planets of our solar system (NASA-based dataset)
+      </p>
 
-        <div className="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Name</th>
-                <th>Mass (10^24 kg)</th>
-                <th>Diameter (km)</th>
-                <th>Density (kg/m³)</th>
-                <th>Distance from Sun (10^6 km)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {planetData.map((group, groupIndex) =>
-                group.planets.map((planet, index) => (
-                  <tr key={`${groupIndex}-${index}`}>
-                    {index === 0 && (
-                      <td rowSpan={group.planets.length} className="category-cell">
-                        {group.category}
-                      </td>
-                    )}
-                    <td>{planet.name}</td>
-                    <td>{planet.mass}</td>
-                    <td>{planet.diameter}</td>
-                    <td>{planet.density}</td>
-                    <td>{planet.distancefromsun}</td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
+      <div className="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Name</th>
+              <th>Mass (10²⁴ kg)</th>
+              <th>Diameter (km)</th>
+              <th>Density (kg/m³)</th>
+              <th>Distance from Sun (10⁶ km)</th>
+              <th>Gravity (m/s²)</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {/* Terrestrial Planets */}
+            <tr>
+              <td className="group" rowSpan="4">Terrestrial</td>
+              <td>Mercury</td>
+              <td>0.330</td>
+              <td>4878</td>
+              <td>5427</td>
+              <td>57.9</td>
+              <td>3.7</td>
+            </tr>
+            <tr>
+              <td>Venus</td>
+              <td>4.87</td>
+              <td>12104</td>
+              <td>5243</td>
+              <td>108.2</td>
+              <td>8.9</td>
+            </tr>
+            <tr>
+              <td>Earth</td>
+              <td>5.97</td>
+              <td>12756</td>
+              <td>5514</td>
+              <td>149.6</td>
+              <td>9.8</td>
+            </tr>
+            <tr>
+              <td>Mars</td>
+              <td>0.642</td>
+              <td>6792</td>
+              <td>3933</td>
+              <td>227.9</td>
+              <td>3.7</td>
+            </tr>
+
+            {/* Gas Giants */}
+            <tr>
+              <td className="group" rowSpan="2">Gas Giants</td>
+              <td>Jupiter</td>
+              <td>1898</td>
+              <td>142984</td>
+              <td>1326</td>
+              <td>778.6</td>
+              <td>24.8</td>
+            </tr>
+            <tr>
+              <td>Saturn</td>
+              <td>568</td>
+              <td>120536</td>
+              <td>687</td>
+              <td>1433.5</td>
+              <td>10.4</td>
+            </tr>
+
+            {/* Ice Giants */}
+            <tr>
+              <td className="group" rowSpan="2">Ice Giants</td>
+              <td>Uranus</td>
+              <td>86.8</td>
+              <td>51118</td>
+              <td>1271</td>
+              <td>2872.5</td>
+              <td>8.7</td>
+            </tr>
+            <tr>
+              <td>Neptune</td>
+              <td>102</td>
+              <td>49528</td>
+              <td>1638</td>
+              <td>4495.1</td>
+              <td>11.2</td>
+            </tr>
+
+            {/* Dwarf Planet */}
+            <tr>
+              <td className="group">Dwarf</td>
+              <td>Pluto</td>
+              <td>0.0146</td>
+              <td>2370</td>
+              <td>1850</td>
+              <td>5906.4</td>
+              <td>0.6</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      {/* ✅ Embedded CSS */}
+      {/* CSS */}
       <style>{`
-      @media (max-width: 768px) {
         .planet-table-section {
-        display: none;
-        }
-      }
-       .container {
+          background: #ffffff;
+          width: 100%;
           padding: 20px;
         }
 
         h2 {
-          color: #0f3f7f;
-          margin-bottom: 10px;
+          color: #164BAF;
+          font-family: Inter, sans-serif;
+          margin-left: 150px;
         }
 
-        .description {
-          font-size: 1rem;
-          margin: 10px 0;
-          color: #333;
-          max-width: 700px;
-        }
-
+        .description,
         .subtitle {
-          font-size: 0.9rem;
-          color: #555;
-          margin-bottom: 20px;
-          font-style: italic;
+          color: #0F2A44;
+          font-family: Inter, sans-serif;
+          margin-left: 150px;
         }
 
-        /* Table wrapper for horizontal scroll */
         .table-wrapper {
-          width: 100%;
           overflow-x: auto;
         }
 
         table {
-          width: 100%;
+          margin-left: 150px;
+          margin-top: 20px;
           border-collapse: collapse;
-          min-width: 600px; /* ensures scroll instead of breaking */
-          background: #fff;
-        }
-
-        th, td {
-          padding: 12px;
-          text-align: left;
-          border: 1px solid #ddd;
+          width: 80%;
+          color: #212121;
         }
 
         th {
-          background: #0f3f7f;
-          color: #fff;
+          background-color: #164BAF;
+          color: white;
+          padding: 10px;
+          border: 1px solid white;
         }
 
-        tr:nth-child(even) {
-          background: #f9f9f9;
+        td {
+          padding-left: 20px;
+          padding-right: 50px;
+          text-align: center;
+          background-color: #F2F7FF;
+          border: 1px solid white;
         }
 
-        tr:hover {
-          background: #f1f1f1;
+        .group {
+          background-color: #D1E3FF;
+          font-weight: 500;
         }
 
-        /* 📱 Mobile responsiveness */
         @media (max-width: 768px) {
-          th, td {
-            padding: 8px;
-            font-size: 0.8rem;
+          h2,
+          .description,
+          .subtitle,
+          table {
+            margin-left: 10px;
           }
 
-          h2 {
-            font-size: 1.3rem;
-          }
-
-          .description {
-            font-size: 0.9rem;
+          table {
+            width: 95%;
           }
         }
+
+        /* Smooth transition for hover */
+table tr {
+  transition: all 0.2s ease-in-out;
+}
+
+  /* Row hover effect */
+  table tbody tr:hover {
+    background-color: #e6f0ff;
+    transform: scale(1.01);
+  }
+
+  /* Optional: subtle lift effect for cells */
+  table td {
+    transition: all 0.2s ease;
+  }
+
+  /* Highlight individual cell slightly on hover */
+  table td:hover {
+    background-color: #d9e8ff;
+  }
+
+
+  @media (max-width: 1024px) {
+    h2 {
+      margin-left: 20px;
+      font-size: 1.6rem;
+    }
+
+    .description,
+    .subtitle {
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+
+    table {
+      margin-left: 20px;
+      width: 95%;
+    }
+
+    th, td {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      margin-left: 10px;
+      font-size: 1.3rem;
+    }
+
+    .description,
+    .subtitle {
+      margin-left: 10px;
+      font-size: 0.85rem;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      margin-left: 10px;
+      width: 100%;
+      min-width: 700px; /* keeps scroll instead of breaking */
+    }
+
+    th, td {
+      padding: 8px;
+      font-size: 0.8rem;
+    }
+
+    /* Reduce hover effect on mobile (optional) */
+    table tbody tr:hover {
+      transform: none;
+    }
+  }
       `}</style>
     </section>
   );

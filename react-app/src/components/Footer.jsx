@@ -1,12 +1,18 @@
+
 // src/components/Footer.jsx
 import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="footer" style={{ border: "", marginTop: "2rem" }}>
+    <footer className="footer">
       <div className="container footer-content">
         <p>© 2026 TS ACADEMY Group Capstone Project. All rights reserved</p>
-        <div className="footer-links">
+
+        </div>
+
+          <hr />
+
+          <div className="footer-links">
           <a href="https://github.com/Anurella" target="_blank" rel="noopener noreferrer">
             Amaka-Github
           </a>
@@ -25,7 +31,29 @@ export default function Footer() {
           <a href="#">Privacy</a>
           <a href="#">Terms</a>
         </div>
-      </div>
+      
+
+      {/* ✅ FIXED STYLE (inside return) */}
+      <style>{`
+        .footer {
+          background: #051540;
+          color: #ffffff;
+          padding: 2rem 1rem;
+          text-align: center;
+        }
+
+      p{
+        color: #ffffff;
+        }
+
+        hr{
+        width: 90%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 50px;
+        }
+       
+      `}</style>
     </footer>
   );
 }

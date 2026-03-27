@@ -7,7 +7,7 @@ export default function VideoSection() {
         <h2>How Planetary Data Helps Us Understand Space</h2>
 
         <p className="subtitle">
-          Comparing <span>mass, diameter, gravity,</span> and <span>density</span> helps us understand how planets form and behave.
+         Planetary science goes beyond images. Comparing <span>mass, diameter, gravity,</span> and <span>density</span> helps us understand how planets form and behave, and interact within the solar system.
         </p>
 
         <div>
@@ -37,14 +37,15 @@ export default function VideoSection() {
       <style>{`
         .video-section {
           padding: 3rem 1rem;
-          background: #0f3f7f;
-          color: #fff;
+          background: #FFFFFF;
+          color: #0F2A44;
           text-align: center;
         }
 
         .video-section h2 {
           font-size: 2rem;
           margin-bottom: 1rem;
+          color: #164BAF;
         }
 
         .video-section .subtitle {
@@ -53,7 +54,7 @@ export default function VideoSection() {
           max-width: 700px;
           margin-left: auto;
           margin-right: auto;
-          color: #ffffff;
+          color: #0F2A44;
         }
 
         .video-card {

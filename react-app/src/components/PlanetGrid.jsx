@@ -89,6 +89,17 @@ function PlanetGrid() {
       </section>
 
       <style>{`
+
+
+      p{
+        color: #0F2A44;
+        }
+      h2{
+        color: #164BAF;
+        }
+      .planet-grid{
+      background: #F2F7FF;
+      }
         .light-bg {
           background: #dbe0f1;
           color: #0f3f7f;
