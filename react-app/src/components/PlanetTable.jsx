@@ -24,8 +24,8 @@ const planetData = [
 
 export default function PlanetTable() {
   return (
-    <section className="section light-bg">
-      <div className="container">
+    <section className="section light-bg planet-table-section">
+        <div className="container">
         <h2>Planetary Facts at a Glance</h2>
 
         <p className="description">
@@ -73,7 +73,12 @@ export default function PlanetTable() {
 
       {/* ✅ Embedded CSS */}
       <style>{`
-        .container {
+      @media (max-width: 768px) {
+        .planet-table-section {
+        display: none;
+        }
+      }
+       .container {
           padding: 20px;
         }
 

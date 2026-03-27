@@ -9,7 +9,9 @@ export default function Hero({ onExploreClick, onContactClick }) {
           <h1>Explore Our Solar System Through Data</h1>
           <p>
             Understand the planets not just by name, but by measurable facts.
-            From size and mass to gravity and density.
+            From size and mass to gravity and density, this page breaks down the solar system 
+            in a way that's easy to grasp. Whether you're a student, educator, or just curious 
+            about space, our data-driven approach will help you see the planets in a whole new light. 
           </p>
           <div className="hero-buttons">
             <button className="btn primary" onClick={onExploreClick}>
@@ -21,107 +23,98 @@ export default function Hero({ onExploreClick, onContactClick }) {
           </div>
         </div>
         <div className="hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
-            alt="Earth"
-          />
+          <img src="/images/hero.png" alt="Solar System" className="solar" />
         </div>
       </div>
 
       {/* Embedded CSS */}
       <style>{`
-        .hero {
-          padding: 4rem 2rem;
-          background: linear-gradient(to right, #0f3f7f, #1b5fa7);
-          color: #fff;
-        }
+          .hero {
+            padding: 1rem;
+            background: linear-gradient(to right, #01183c, #01183c);
+            color: #fff;
+          }
 
-        .hero-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          align-items: center;
-          gap: 2rem;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .hero-text h1 {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-        }
-
-        .hero-text p {
-          font-size: 1.1rem;
-          margin-bottom: 2rem;
-          line-height: 1.5;
-        }
-
-        .hero-buttons {
-          display: flex;
-          gap: 1rem;
-        }
-
-        .btn {
-          padding: 0.8rem 1.8rem;
-          font-size: 1rem;
-          font-weight: bold;
-          border-radius: 50px;
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .btn.primary {
-          background: linear-gradient(45deg, #ff6ec4, #7873f5);
-          color: #fff;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn.primary:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .btn.secondary {
-          background: rgba(255,255,255,0.1);
-          color: #fff;
-          border: 1px solid rgba(255,255,255,0.3);
-          backdrop-filter: blur(10px);
-        }
-
-        .btn.secondary:hover {
-          background: rgba(255,255,255,0.25);
-          transform: translateY(-3px);
-        }
-
-        .hero-image img {
-          width: 100%;
-          border-radius: 15px;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
           .hero-grid {
-            grid-template-columns: 1fr;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+          }
+
+          @media (max-width: 768px) {
+            .hero-text h1 {
+              font-size: 1.8rem;
+            }
+          }
+
+          .hero-text p {
+            font-size: 0.8rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
           }
 
           .hero-buttons {
-            flex-direction: column;
-            align-items: center;
+            display: flex;
+            gap: 1rem;
           }
 
-          .hero-buttons .btn {
+          .btn {
+            padding: 0.8rem 1.8rem;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+
+          .btn.primary {
+            background: linear-gradient(45deg, #ff6ec4, #7873f5);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+          }
+
+          .btn.secondary {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+          }
+
+          .hero-image img {
             width: 100%;
-            max-width: 250px;
           }
 
-          .hero-image {
-            margin-top: 2rem;
+          /* Responsive */
+          @media (max-width: 768px) {
+            .hero-grid {
+              grid-template-columns: 1fr;
+              text-align: center;
+            }
+
+            .hero-image {
+              order: -1;
+              margin-bottom: 1rem;
+            }
+
+            .hero-buttons {
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .hero-buttons .btn {
+              width: 100%;
+              max-width: 250px;
+            }
           }
-        }
-      `}</style>
+`}</style>
     </section>
   );
 }
