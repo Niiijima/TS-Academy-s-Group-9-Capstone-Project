@@ -5,8 +5,7 @@ Group work for Ts Academy's Project
 This is a React-based web application that displays information about planets using data fetched from an external API. It demonstrates the use of component-based architecture, Fetch API, responsive design and collaborative Git workflows.
 
 ##  Team Members
-
-- Uloma Nneji - https://github.com/FaVe-N
+- Agwu Queen - https://github.com/Niiijima
 - Samuel Idah - https://github.com/Idahjnr007
 - Okafor Nicholas - https://github.com/el-klaus
 - Elizabeth Okonkwo - https://github.com/Eliza-bit492
@@ -15,7 +14,8 @@ This is a React-based web application that displays information about planets us
 - Reginald Paulite - https://github.com/reginaldpaulite
 - Moses Akande - https://github.com/Traitzz
 - Eke Fortunate - https://github.com/FortunateEke
-- Agwu Queen - https://github.com/Niiijima
+- Uloma Nneji - https://github.com/FaVe-N
+
 
 ## Components / Features and Who Worked on Them
 
